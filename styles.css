@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 18px;
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -20,33 +24,38 @@ Accent color: #F875AA
 
 */
 
-p {
-    margin: 0;
-    padding: 0;
+/* ============================= TEXT FONT STUFF ============================= */
 
+p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
     color: #AFADB5;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 h2 {
-    font-size: 42px;
-    padding: 0;
-    margin: 0;
+    font-size: 2.488rem;
 }
 
 h3 {
-    padding: 0;
-    margin: 0;
-
-    font-weight: 300;
     color: #373434;
+    font-size: 2.074rem;
 }
 
 h4 {
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 1.728rem;
+}
+
+h5{
+    font-size: 1.44rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 ul {
@@ -68,7 +77,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 5.5rem;
+    gap: 1rem;
 }
 
 .navbar img {
@@ -79,33 +89,33 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 1rem;
 }
 
-.nav-left h4 {
+.nav-left h6 {
+    font-weight: 600;
     letter-spacing: 2px;
-    cursor: pointer;
+    cursor: default;
 }
 
-.navbar h3 {
-    padding: 0;
+.navbar p {
     cursor: pointer;
 }
 
 .logo {
-    height: 40px;
-    margin: 32px 0;
+    height: 42px;
+    margin: 2rem 0;
 }
 
 .nav-links,
 .nav-user {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .nav-user {
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .current-page {
@@ -115,11 +125,12 @@ header {
 }
 
 .nav-icon {
-    height: 32px;
+    height: 30px;
 }
 
 .hamburger-menu {
     display: none;
+    align-items: center;
 }
 
 /* --------------------------  Gallery Carousel  -------------------------- */
@@ -129,13 +140,15 @@ header {
     display: flex;
     justify-content: center;
 
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 25rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .carousel {
     min-height: 200px;
-    min-width: 350px;
+    min-width: 288px;
     width: 25vw;
     height: 45vh;
     position: relative;
@@ -191,14 +204,14 @@ header {
     z-index: 2;
     background: none;
     border: none;
-    font-size: 4rem;
+    font-size: 3rem;
     top: 50%;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
     border-radius: .25rem;
     padding: 0 .5rem;
     background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .carousel-button:hover,
@@ -212,11 +225,11 @@ header {
 }
 
 .carousel-button.prev {
-    left: 1rem;
+    left: -2rem;
 }
 
 .carousel-button.next {
-    right: 1rem;
+    right: -2rem;
 }
 
 .description-container {
@@ -253,9 +266,49 @@ footer {
     border-top: 2px solid #F1E3D9;
 }
 
-/* ============================== MEDIA QUERIES  =================================== */
+/* ============================== Breakpoints  =================================== */
 
-@media (max-width: 850px) {
+@media (max-width: 1366px) {
+    html {
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-links,
+    .nav-user {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .logo {
+        height: 32px;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+    
 
     .nav-links,
     .nav-user {
@@ -264,24 +317,16 @@ footer {
 
     .hamburger-menu {
         display: flex;
-        align-items: center;
     }
 
-    h1 {
-        font-size: 32px;
+    .carousel-button.prev {
+        left: -1.5rem;
     }
 
-    h2 {
-        font-size: 24px;
+    .carousel-button.next {
+        right: -1.5rem;
     }
 
-    h3 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 14px;
-    }
 }
 
 /* --------------------------  Fonts  -------------------------- */
