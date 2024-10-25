@@ -1,0 +1,395 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #FEFEFE;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+/* ============================== COLORS  =================================== 
+
+Main text: #373434
+Accent color: #F875AA
+
+*/
+
+p {
+    margin: 0;
+    padding: 0;
+
+    color: #AFADB5;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 42px;
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+
+    font-weight: 300;
+    color: #373434;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ============================== HEADER  =================================== */
+
+header {
+    background-color: #FEFEFE;
+    border-bottom: 2px solid #F3F3F3;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.navbar img {
+    cursor: pointer;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-left h4 {
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.navbar h3 {
+    padding: 0;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    margin: 32px 0;
+}
+
+.nav-links,
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-user {
+    gap: 3rem;
+}
+
+.current-page {
+    color: #F875AA;
+    border-bottom: 2px solid #F875AA;
+    margin-bottom: -2px;
+}
+
+.nav-icon {
+    height: 32px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+/* --------------------------  Gallery Carousel  -------------------------- */
+
+
+#gallery {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5rem;
+    margin-bottom: 25rem;
+}
+
+.carousel {
+    min-height: 200px;
+    min-width: 350px;
+    width: 25vw;
+    height: 45vh;
+    position: relative;
+}
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide p {
+    max-width: 600px;
+}
+
+.slide h2 {
+    margin: 2rem 0;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+}
+
+.slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide[data-active] > img {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.slide > div {
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+}
+
+.slide[data-active] > div {
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+.description-container {
+    display: flex;
+    justify-content: center;
+}
+
+.slide-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slide-description h2 {
+    text-align: center;
+}
+
+/* --------------------------  Slide Descriptions  -------------------------- */
+
+
+.bottom-stuff {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    width: 75%;
+    margin: 4em auto;
+    padding-top: 24px;
+    text-align: center;
+    border-top: 2px solid #F1E3D9;
+}
+
+/* ============================== MEDIA QUERIES  =================================== */
+
+@media (max-width: 850px) {
+
+    .nav-links,
+    .nav-user {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+/* --------------------------  Fonts  -------------------------- */
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
